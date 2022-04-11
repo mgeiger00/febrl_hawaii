@@ -41,7 +41,8 @@ misspellingsDict = {}
 
 #make random number of misspellings (1-3) for each name
 for name in nameList:
-    numOfMisspellings = random.randrange(1,3)
+    numOfMisspellings = random.randrange(5)
+    #print(numOfMisspellings)
     for i in range(numOfMisspellings):
         if name not in misspellingsDict:
             misspellingsDict[name] = []
@@ -49,16 +50,13 @@ for name in nameList:
         else:
             misspellingsDict[name].append(createMisspelling(name))
 
-with open('firstname-misspell.csv', 'w') as csvfile:   
-    writer = csv.writer(csvfile)
-    key_list = list(misspellingsDict.keys())
-    limit = len(key_list)
-    writer.writerow(misspellingsDict.keys())
-    writer.writerows(zip(*misspellingsDict.values()))
+#output list of names to csv
+columnNames = ['Name', 'Misspelling']
+rowNames = []
+for name in misspellingsDict:
+    rowNames.append([name, misspellingsDict[name]])
 
-
-
-
-
-
-
+with open('firstname-misspell.csv', 'w', encoding="utf-8", newline = '') as f:
+    write = csv.writer(f) 
+    write.writerow(columnNames) 
+    write.writerows(rowNames)
