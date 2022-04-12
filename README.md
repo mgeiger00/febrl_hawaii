@@ -12,5 +12,5 @@ To run generate.py the following command can be used in your computer's command 
 The first argument is the name of the file (generate.py), the second argument is the number of names you would like to use out of 3012 (2000), the third argument
 is the desired name of the output file (createdDataset.csv), the fourth argument is the number of unique entries desired (200), the fifth is the number of duplicates
 desired (30), the sixth argument is the maximum number of duplicates based on one original record (5), the seventh argument is the maximum number of modifications in a
-single field (4), the eigth argument is the maximum number of modifications in the full record, and the ninth argument is the desired distribution of duplicate records
+single field (4), the eigth argument is the maximum number of modifications in the full record (6), and the ninth argument is the desired distribution of duplicate records
 (which can be zipf, uniform, or poisson).
