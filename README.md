@@ -1,6 +1,7 @@
 # HHSProject
 CS460/461 Group Project on Data Matching
-This main branch contains the generate.py script that uses the files in /data to create a user defined dataset containing a mock patient record.
+
+This main branch contains the generate.py script that uses the files in data folder to create a user defined dataset containing a mock patient record.
 It includes a patient ID, first name, last name	 street number, address,	city, zipcode, state, date of birth, age, phone number, social security number,
 and blocking number. An example of the output is in createdDataset.csv
 
