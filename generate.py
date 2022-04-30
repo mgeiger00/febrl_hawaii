@@ -434,17 +434,16 @@ def error_character(input_char, char_range):
   # all letters both for rows and columns (based on ideas implemented by
   # Mauricio A. Hernandez in his dbgen).
   #
-  rows = {'a':'s',  'b':'vn', 'c':'xv', 'd':'sf', 'e':'wr', 'f':'dg', 'g':'fh',
-          'h':'gj', 'i':'uo', 'j':'hk', 'k':'jl', 'l':'k',  'm':'n',  'n':'bm',
-          'o':'ip', 'p':'o',  'q':'w',  'r':'et', 's':'ad', 't':'ry', 'u':'yi',
-          'v':'cb', 'w':'qe', 'x':'zc', 'y':'tu', 'z':'x',
-          '1':'2',  '2':'13', '3':'24', '4':'35', '5':'46', '6':'57', '7':'68',
-          '8':'79', '9':'80', '0':'9'}
-
-  cols = {'a':'qzw','b':'gh', 'c':'df', 'd':'erc','e':'d', 'f':'rvc','g':'tbv',
-          'h':'ybn','i':'k',  'j':'umn','k':'im', 'l':'o',  'm':'jk', 'n':'hj',
-          'o':'l',  'p':'p',  'q':'a',  'r':'f',  's':'wxz','t':'gf',  'u':'j',
-          'v':'fg', 'w':'s',  'x':'sd', 'y':'h',  'z':'as'}
+  letterDict = {'a':['s','q','z','w'], 'b':['v','n','g','h'], 'c':['x','v','d','f'], 'd':['s','f','e','r','c'], 'e':['w','d','r'],
+                  'f':['d','g','r','v','c'], 'g':['f','h','t','b','v'],'h':['g','j','y','b','n'],'i':['u','o','k'], 'j':['h','k','u','m','n'],
+                  'k':['j','l','i','m'], 'l':['k','o','p'], 'm':['n','j','k'], 'n':['b','m','h','j'], 'o':['i','p','l'], 'p':['o','l'],
+                  'q':['w','a'],'r':['e','t','f'], 's':['a','d','w','x','z'], 't':['r','y','g','f'], 'u':['y','i','j'], 'v':['c','b','f','q'],
+                  'w':['q','e','s'], 'x':['z','c','s','d'], 'y':['t','u','h'], 'z':['x','a','s'], 'A':['S','Q','Z','W'], 'B':['V','N','G','H'], 'C':['X','V','D','F'], 'D':['S','F','E','R','C'], 'E':['W','D','R'],
+                  'F':['D','G','R','V','C'], 'G':['F','H','T','B','V'],'H':['G','J','Y','B','N'],'I':['U','O','K'], 'J':['H','K','U','M','N'],
+                  'K':['J','L','I','M'], 'L':['K','O','P'], 'M':['N','J','K'], 'N':['B','M','H','J'], 'O':['I','P','L'], 'P':['O','L'],
+                  'Q':['W','A'],'R':['E','T','F'], 'S':['A','D','W','X','Z'], 'T':['R','Y','G','F'], 'U':['Y','I','J'], 'V':['C','B','F','Q'],
+                  'W':['Q','E','S'], 'X':['Z','C','S','D'], 'Y':['T','U','H'], 'Z':['X','A','S'], '1':['2'], '2':['1','3'], '3':['2','4'],
+                  '4':['3','5'], '5':['4','6'], '6':['5','7'], '7':['6','8'], '8':['7','9'], '9':['8','0'], '0':['9'], '-':['-'], "'":["'"]}
 
   rand_num = random.random()  # Create a random number between 0 and 1
 
@@ -453,7 +452,7 @@ def error_character(input_char, char_range):
     # A randomly chosen neigbouring key in the same keyboard row
     #
     if (input_char.isdigit()) and (rand_num <= single_typo_prob['same_row']):
-      output_char = random.choice(rows[input_char])
+      output_char = random.choice(letterDict[input_char])
     else:
       choice_str = input_char.replace(string.digits, '')
       output_char = random.choice(choice_str)  # A randomly choosen digit
@@ -463,16 +462,16 @@ def error_character(input_char, char_range):
     # A randomly chosen neigbouring key in the same keyboard row
     #
     if (input_char.isalpha()) and (rand_num <= single_typo_prob['same_row']):
-      output_char = random.choice(rows[input_char])
+      output_char = random.choice(letterDict[input_char])
 
     # A randomly chosen neigbouring key in the same keyboard column
     #
     elif (input_char.isalpha()) and \
        (rand_num <= (single_typo_prob['same_row'] + \
                      single_typo_prob['same_col'])):
-      output_char = random.choice(cols[input_char])
+      output_char = random.choice(letterDict[input_char])
     else:
-      output_char = random.choice(cols[random.choice(string.ascii_lowercase)])  # A randomly choosen letter
+      output_char = random.choice(letterDict[random.choice(string.ascii_lowercase)])  # A randomly choosen letter
 
   else:  # Both letters and digits possible
 
@@ -480,7 +479,7 @@ def error_character(input_char, char_range):
     #
     if (rand_num <= single_typo_prob['same_row']):
       if (input_char in rows):
-        output_char = random.choice(rows[input_char])
+        output_char = random.choice(letterDict[input_char])
       else:
         choice_str.replace(string.ascii_lowercase+string.digits, \
                                      input_char, '')
@@ -491,7 +490,7 @@ def error_character(input_char, char_range):
     elif (rand_num <= (single_typo_prob['same_row'] + \
                        single_typo_prob['same_col'])):
       if (input_char in cols):
-        output_char = random.choice(cols[input_char])
+        output_char = random.choice(letterDict[input_char])
       else:
         choice_str.replace(string.ascii_lowercase+string.digits, \
                                      input_char, '')
@@ -1780,7 +1779,3 @@ for rec_id in all_rec_ids:
 f_out.close()
 
 print('End.')
-
-
-
-
