@@ -1,15 +1,15 @@
 # HHS Dataset Generation Project
-## CS460/461 Group Project
+### CS460/461 Group Project
 ###### Created by Max Geiger, Jamie Strong, Aaron McLean, and Catherine Cornella, August 2021 - May 2022
 
-### I. Program Purpose and Overview
+## Program Purpose and Overview
 The program’s purpose is to create a Hawaii-focused dataset of fictitious patient records, for the purpose of assisting the further refinement of partial patient record matching software. This is unique due to the common occurrence of a special character within Hawaiian names, referred to as the okena. 
 The program creates a data set of fabricated patient data records, with the option of randomized duplications of names, exporting the resulting dataset in comma-separated value format (.CSV). The records are composed of the following fields: patient ID, first name, last name, street number, address, city, zip-code, state, date of birth, age, phone number, social security number, and blocking number. The distribution of the randomness can be one of three specific types, selectable upon execution.
 
-### II. Program Requirements
+## Program Requirements
 To execute the program, it is required that Python 3 be installed on the machine, and may be necessary to install the `sets` and `pandas` packages. To do so, simply run `pip install sets` and `pip install pandas`, or consult online instructions. It is recommended to have a software able to read .csv files as well, although not required. The program is compatible with the latest version of Python 3. 
 
-### III. Program Instructions and Customization Options
+## Program Instructions and Customization Options
 This main branch contains the generate.py script that uses the files in data folder to create a user defined dataset containing a mock patient record.
 It includes a patient ID, first name, last name	 street number, address,	city, zipcode, state, date of birth, age, phone number, social security number,
 and blocking number. An example of the output is in createdDataset.csv
@@ -28,7 +28,7 @@ single field (4), the eigth argument is the maximum number of modifications in t
 #### - Program Customization
 Within the program, several variables can be changed to customize the program
 
-### IV. Common Issues and Solutions
+## Common Issues and Solutions
 If you are having trouble with the execution of the file, we suggest you check the following areas:
 #### - Command Arguments
 The most probable error is a result of the arguments being specified incorrectly. This can be as trivial as a misspelling of one of the arguments, or an omission of an argument entirely. Ensure you have the correct number of arguments, in the correct order, with the correct input for that argument.
