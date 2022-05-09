@@ -7,7 +7,7 @@ The program’s purpose is to create a Hawaii-focused dataset of fictitious pati
 The program creates a data set of fabricated patient data records, with the option of randomized duplications of names, exporting the resulting dataset in comma-separated value format (.CSV). The records are composed of the following fields: patient ID, first name, last name, street number, address, city, zip-code, state, date of birth, age, phone number, social security number, and blocking number. The distribution of the randomness can be one of three specific types, selectable upon execution.
 
 ### II. Program Requirements
-To execute the program, it is required that Python 3 be installed on the machine, and may be necessary to install the sets and pandas packages. To do so, simply run pip install sets and pip install pandas, or consult online instructions. It is recommended to have a software able to read .csv files as well, although not required. The program is compatible with the latest version of Python 3. 
+To execute the program, it is required that Python 3 be installed on the machine, and may be necessary to install the `sets` and `pandas` packages. To do so, simply run `pip install sets` and `pip install pandas`, or consult online instructions. It is recommended to have a software able to read .csv files as well, although not required. The program is compatible with the latest version of Python 3. 
 
 ### III. Program Instructions and Customization Options
 This main branch contains the generate.py script that uses the files in data folder to create a user defined dataset containing a mock patient record.
