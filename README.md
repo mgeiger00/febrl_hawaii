@@ -1,6 +1,5 @@
 # FEBRL Hawaii
-### CS460/461 Group Project
-###### Created by Max Geiger, Jamie Strong, Aaron McLean, and Catherine Cornella, August 2021 - May 2022
+###### Created by Max Geiger, Jamie Strong, Aaron McLean, and Catherine Cornella, August 2021 - May 2022 (University of Hawaii at Hilo)
 
 ## Program Purpose and Overview
 The program’s purpose is to create a Hawaii-focused dataset of fictitious patient records, for the purpose of assisting the further refinement of partial patient record matching software. This is unique due to the common occurrence of a special character within Hawaiian names, referred to as the okena. 
