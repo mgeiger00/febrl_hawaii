@@ -1,4 +1,4 @@
-# HHS Dataset Generation Project
+# FEBRL Hawaii
 ### CS460/461 Group Project
 ###### Created by Max Geiger, Jamie Strong, Aaron McLean, and Catherine Cornella, August 2021 - May 2022
 
